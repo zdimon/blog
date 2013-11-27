@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" media="screen" />
+<title>Блог</title>
+</head>
+<body>
+      <h1>Привет!</h1>
+      {% block base_content %} {% endblock %}
+</body>
+</html>
