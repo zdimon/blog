@@ -6,7 +6,20 @@
 <title>Блог</title>
 </head>
 <body>
-      <h1>Привет!</h1>
-      {% block base_content %} {% endblock %}
+
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="container">
+
+                <h1>Мой первый блог</h1>
+
+          </div>
+        </nav>
+
+      <div class="container">
+          <div class="row">
+             {% block base_content %} {% endblock %}
+          </div>
+      </div>
+
 </body>
 </html>
