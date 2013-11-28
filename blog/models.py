@@ -6,6 +6,8 @@ class BlogCategory(models.Model):
     description = models.TextField(verbose_name=u'Описание')
     def __unicode__(self):
         return self.name
+    def get_absolute_url(self):
+        return "/blog-category/%i/" % self.id
     class Meta:
         verbose_name = u'Категория'
         verbose_name_plural = u'Категории'
