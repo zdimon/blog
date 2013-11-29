@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+ {% block base_content %}
+
+<h2>{{ blogtopic }}</h2>
+<p>
+   {{ blogtopic.content | safe }}
+</p>
+    {% for i in blogtopic.blogpost_set.all %}
+
+          <p>
+           {{ i.content|safe }}
+          </p>
+
+
+    {% endfor %}
+
+ {% endblock %}

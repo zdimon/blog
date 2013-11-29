@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+ {% block base_content %}
+
+<h2>{{ blogcategory }}</h2>
+
+    {% for i in blogcategory.blogtopic_set.all %}
+
+           <div class="col-sm-6" style="height: 190px; border-bottom: 1px dotted #c0c0c0">
+              <h3> {{ i.title }}</h3>
+              <p> {{ i.content|truncatewords_html:20 }}</p>
+              <p><a class="btn btn-default" href="{{ i.get_absolute_url }}" role="button">Подробно &raquo;</a></p>
+            </div><!--/span-->
+
+
+    {% endfor %}
+
+ {% endblock %}

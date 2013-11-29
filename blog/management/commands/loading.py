@@ -1,3 +1,4 @@
+#coding: utf-8
 from django.core.management.base import BaseCommand, CommandError
 from mixer.backend.django import mixer
 from blog.models import BlogCategory, BlogTopic, BlogPost
@@ -13,7 +14,7 @@ class Command(BaseCommand):
         self.stdout.write('Start loading.......' )
         categories = mixer.cycle(10).blend(BlogCategory)
         for c in categories:
-            topics = mixer.cycle(10).blend(BlogTopic,category=c)
+            topics = mixer.cycle(10).blend(BlogTopic,category=c, title=u'Заголовок блога')
             for t in topics:
                 posts = mixer.cycle(10).blend(BlogPost,topic=t,content=mixer.fake, author='Fedot')
         self.stdout.write('Well done' )

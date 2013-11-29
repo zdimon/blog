@@ -23,6 +23,8 @@ class BlogTopic(models.Model):
     content = models.TextField(verbose_name=u'Содержимое')
     created_at = models.DateField(auto_now_add=True)
     status = models.CharField(choices=STATUS, verbose_name=u'Статус', max_length=250)
+    def get_absolute_url(self):
+        return "/blog-topic/%i/" % self.id
     def __unicode__(self):
         return self.title
 
