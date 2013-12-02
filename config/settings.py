@@ -8,6 +8,11 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
+
+CKEDITOR_UPLOAD_PATH = "/www/lessons/blog_ve/blog/media/uploads"
+
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -63,18 +68,20 @@ MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+
+#STATIC_ROOT = os.path.join(PROJECT_PATH, "static")
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_PATH, "static"),
+     os.path.join(PROJECT_PATH, "static"),
 )
 
 # List of finder classes that know how to find static files in
@@ -124,12 +131,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'sorl.thumbnail',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'elfinder',
+    'ckeditor',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
-
+INSTALLED_APPS += ( 'django_markdown', )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',

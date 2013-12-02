@@ -1,5 +1,6 @@
 #coding: utf-8
 from django.db import models
+from elfinder.fields import ElfinderField
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=250, verbose_name=u'Заголовок', blank=False)
@@ -38,8 +39,14 @@ class BlogPost(models.Model):
 
 class BlogImages(models.Model):
     topic = models.ForeignKey('BlogTopic')
+    image = ElfinderField(optionset='image')
     image  = models.ImageField(upload_to='blog', verbose_name=u'Изображение')
     def __unicode__(self):
         return u'Изображение '+ str(self.id)
+    @property
+    def thumbnail(self):
+        image = get_thumbnail(self.image.path, '130x130', crop='center', quality=99)
+        out =  mark_safe(u'<img src="%s" />' % image.url)
+        return out
     class Meta:
         verbose_name_plural = u'Изображения к блогу'

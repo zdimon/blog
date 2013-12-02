@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>elFinder</title>
+<meta http-equiv="content-language" content="ru" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/elfinder/js/elfinder.full.js"></script>
+<script type="text/javascript" src="/static/js/jquery.elfinder-widget.full.js"></script>
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/jquery.elfinder-widget.full.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    var funcNum = window.location.search.replace(/^.*CKEditorFuncNum=(\d+).*$/, "$1");
+    var langCode = window.location.search.replace(/^.*langCode=([a-z]{2}).*$/, "$1");
+
+    $('.finder').elfinder({
+        url : '/connector/',
+        lang : langCode,
+        view: 'list',
+        height: 450,
+        editorCallback : function(url) {
+            window.opener.CKEDITOR.tools.callFunction(funcNum, url);
+            window.close();
+        }
+    })
+        $(document).ready( function() {
+
+
+
+
+
+
+    })(yawdelfinder.jQuery)
+
+</script>
+
+<div class="finder"></div>
+</body>
+</html>
