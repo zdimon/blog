@@ -10,7 +10,7 @@ ADMINS = (
 
 PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
 
-CKEDITOR_UPLOAD_PATH = "/www/lessons/blog_ve/blog/media/uploads"
+CKEDITOR_UPLOAD_PATH = "/www/blog_ve/blog/media/uploads"
 
 
 MANAGERS = ADMINS
@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'elfinder',
     'ckeditor',
+    'utils',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

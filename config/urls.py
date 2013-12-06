@@ -3,7 +3,7 @@ import os
 PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
 from django.conf.urls import patterns, include, url
 from blog.views import CategoryDetailView
-from blog.views import TopicDetailView
+from blog.views import TopicDetailView, TopicListView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from django.conf import settings
@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     url(r'^$', 'blog.views.home', name='home'),
     url(r'^blog-category/(?P<pk>\d+)/$', CategoryDetailView.as_view()),
     url(r'^blog-topic/(?P<pk>\d+)/$', TopicDetailView.as_view()),
+
+    url(r'^blog-topic-list/(?P<pk>\d+)/$', TopicListView.as_view(template_name = 'blogtopic_list.html'), name='blog-topic-list'),
+
     url('^markdown/', include( 'django_markdown.urls')),
     url(r'^elfinder/', include('elfinder.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),

@@ -1,5 +1,6 @@
+
 <ul class="nav nav-pills nav-stacked">
     {% for c in cats %}
-       <li><a href="{{ c.get_absolute_url }}" >{{ c }}</a></li>
+       <li><a href="{% url 'blog-topic-list' c.id %}" >{{ c }}</a></li>
     {% endfor %}
 </ul>
