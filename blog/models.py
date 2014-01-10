@@ -1,6 +1,6 @@
 #coding: utf-8
 from django.db import models
-from elfinder.fields import ElfinderField
+#from elfinder.fields import ElfinderField
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=250, verbose_name=u'Заголовок', blank=False)
