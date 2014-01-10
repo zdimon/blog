@@ -1,0 +1,5 @@
+<ul class="nav nav-pills nav-stacked">
+    {% for c in cats %}
+       <li {% if category == c.id %}class="active"{% endif %}><a href="{% url 'blog-topic-list' c.id %}" >{{ c }}</a></li>
+    {% endfor %}
+</ul>

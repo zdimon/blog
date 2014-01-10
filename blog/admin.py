@@ -18,9 +18,9 @@ class TopicForm(ModelForm):
     class Meta:
         model = BlogTopic
         widgets = {
-           # 'content' : CKEditorWidget,
+            'content' : CKEditorWidget,
            # 'content' : CKEditorSimple,
-           'content' : MarkdownWidget,
+           #'content' : MarkdownWidget,
         }
 
 

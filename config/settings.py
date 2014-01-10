@@ -15,6 +15,7 @@ CKEDITOR_UPLOAD_PATH = "/www/blog_ve/blog/media/uploads"
 
 MANAGERS = ADMINS
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -24,6 +25,13 @@ DATABASES = {
         'PASSWORD': '1q2w3e',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
+    }
+}
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_PATH, 'db.sqlite3'),
     }
 }
 

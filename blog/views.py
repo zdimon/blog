@@ -30,4 +30,5 @@ class TopicListView(ListView):
         return qs
 
 def home(request):
+    request.session['cur_cat'] = ''
     return render_to_response('home.html', {},context_instance=RequestContext(request))

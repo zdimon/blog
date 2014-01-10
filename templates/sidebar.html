@@ -1,6 +1,6 @@
-
+{% load navigator %}
 <ul class="nav nav-pills nav-stacked">
     {% for c in cats %}
-       <li><a href="{% url 'blog-topic-list' c.id %}" >{{ c }}</a></li>
+       <li class="{% active request "^blog-topic-list/" %}" ><a href="{% url 'blog-topic-list' c.id %}" >{{ c }}</a></li>
     {% endfor %}
 </ul>
