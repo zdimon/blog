@@ -1,0 +1,12 @@
+server {
+    listen      80;
+    server_name blog.symfony.com.ua;
+    access_log  /var/log/nginx/blog.log;
+    location / {
+           uwsgi_pass      unix:///tmp/blog.sock;
+            include         uwsgi_params;
+    }
+    location /static {
+        alias /home/zdimon/blog_ve/blog/static/;
+    }
+}

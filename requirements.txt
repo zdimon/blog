@@ -1,0 +1,5 @@
+Django==1.5.4
+PIL==1.1.7
+django-markdown
+mixer
+-e git+https://github.com/shaunsephton/django-ckeditor.git#egg=django-ckeditor

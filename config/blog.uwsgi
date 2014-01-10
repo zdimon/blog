@@ -1,0 +1,14 @@
+[uwsgi]
+thread          = 3
+master          = true
+processes       = 2
+module          = config.wsgi
+chdir           = /home/zdimon/blog_ve/blog
+socket          = /tmp/blog.sock
+logto           = /var/log/uwsgi/blog.log
+vacuum          = true
+max-requests    = 5000
+buffer-size     = 32768
+chmod-socket    = 777
+plugins         = python
+home            = /home/zdimon/blog_ve
